@@ -21,6 +21,14 @@ window.addEventListener('DOMContentLoaded', event => {
             navbarCollapsible.classList.add('navbar-shrink')
         }
 
+        // Add class when at the bottom of the page
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        if ((window.scrollY + clientHeight) >= scrollHeight - 50) {
+            navbarCollapsible.classList.add('navbar-at-bottom');
+        } else {
+            navbarCollapsible.classList.remove('navbar-at-bottom');
+        }
     };
 
     // Shrink the navbar 
